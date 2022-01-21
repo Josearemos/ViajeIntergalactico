@@ -46,6 +46,7 @@ def partida():
         #LLAMA A LA SUMA DE LOS 3 DADOS
         print(f"Resultado: {primerasuma(dado1,dado2,dado3)}")
 
+        #Igualo la tirada y el resultado final y esta será la que guarde la tirada
         tirada = resultadofinal
         print(f"Has guardado {tirada}")
 
@@ -56,17 +57,18 @@ def partida():
 
         print(f"Has sacado un {resultadofinal}")
 
-
-
+        #La resta del resultado guardado y la tirada anterior
         resultado = resultadofinal - tirada
+        #el valor será absoluto no es posible que sea negativo
         resultado= abs(resultado)
+        print(f"Resultado Resta: {resultado}")
 
-        #CONDICION SI EL RESULTADO E SMUY PEQUEÑO NO AVANZA Y SACA MAS D EUN 4 SI AVANZARÁ DICHAS CASILLAS
+        #CONDICION SI EL RESULTADO ES MUY PEQUEÑO NO AVANZA Y SACA MAS D EUN 4 SI AVANZARÁ DICHAS CASILLAS
         if resultado > 4:
-            print(f"Te mueves a la casilla {casillas}")
+            print(f"La Galaxia es muy lejana no se puede alcanzar, te mantienes en la casilla {casillas}")
         else:
             casillas =  resultado + casillas
-            print(f"Lo siento esa galaxia es muy lejana te mueves a la casilla {casillas}")
+            print(f"La galaxia está cerca es posible desplazarnos hasta {casillas}")
 
         #CONDICION DE QUE SI CAE EN LA CASILLA 31(LOS EXTRATERRESTRES) TE MANDA A LA CASILLA 23
         if casillas == extraterrestres:
